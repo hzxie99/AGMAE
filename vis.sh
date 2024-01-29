@@ -1,0 +1,21 @@
+python /data/xhz/adamae-main/visualization_reconstruction.py \
+    --model vit_base_patch16_224 \
+    --data_set SSV2 \
+    --nb_classes 174 \
+    --finetune '/data/xhz/adamae-main/output/adamae_sthv2/checkpoint-best.pth' \
+    --batch_size 2 \
+    --num_sample 1 \
+    --input_size 224 \
+    --short_side_size 224 \
+    --save_ckpt_freq 10 \
+    --num_frames 16 \
+    --sampling_rate 4 \
+    --opt adamw \
+    --lr 5e-4 \
+    --opt_betas 0.9 0.999 \
+    --weight_decay 0.05 \
+    --epochs 50 \
+    --dist_eval \
+    --test_num_segment 2 \
+    --test_num_crop 3 \
+    --enable_deepspeed
